@@ -11,7 +11,8 @@ let soccerTeams = [
 
 class MyReadableStream extends Readable{
     constructor(array){
-        super({encoding: "utf-8"});
+        //super({encoding: "utf-8"});
+        super({objectMode: true});
         this.array = array;
         this.index = 0;
     }
