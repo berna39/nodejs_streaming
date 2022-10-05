@@ -1,14 +1,5 @@
 const { Readable } = require('stream');
 
-let soccerTeams = [
-    "Liverpool",
-    "Arsenal",
-    "Leeds",
-    "Liecester",
-    "Tottenham",
-    "Chelsea"
-];
-
 class MyReadableStream extends Readable{
     constructor(array){
         //super({encoding: "utf-8"});
@@ -25,6 +16,15 @@ class MyReadableStream extends Readable{
        } else this.push(null) // at the moment that i push null it will trigger the end event
     }
 }
+
+let soccerTeams = [
+    "Liverpool",
+    "Arsenal",
+    "Leeds",
+    "Liecester",
+    "Tottenham",
+    "Chelsea"
+];
 
 let teamStream = new MyReadableStream(soccerTeams);
 teamStream.on("data", (chunk) => console.log(chunk));
