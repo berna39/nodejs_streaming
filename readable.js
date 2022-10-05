@@ -22,9 +22,10 @@ class MyReadableStream extends Readable{
         const chunk = this.array[this.index];
         this.push(chunk);
         this.index += 1;
-       } else this.push(null)
+       } else this.push(null) // at the moment that i push null it will trigger the end event
     }
 }
 
 let teamStream = new MyReadableStream(soccerTeams);
 teamStream.on("data", (chunk) => console.log(chunk));
+teamStream.on("end", () => console.log(`End of streaming`));
