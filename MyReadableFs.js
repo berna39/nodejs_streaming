@@ -10,4 +10,4 @@ myStream.on("end", () => { console.log(`No more data on the stream`) });
 //--- To put the stream into the non-flowing mode ---//
 
 // myStream.pause(); // To stop the reading
-// myStream.read(); // To continue the reading
+// myStream.resume(); // To continue the reading
