@@ -7,4 +7,3 @@ readStream.on("data", (chunk) => { writeStream.write(chunk) }); // reading by wr
 readStream.on("error", (err) => { console.log(`Error occured : ${err}`) });
 readStream.on("end", () => writeStream.end());
 writeStream.on("close", () => { console.log(`The copy file is ready`) });
-
